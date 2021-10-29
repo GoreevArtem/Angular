@@ -1,0 +1,91 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <div
+    class="alert alert-{{massage.type}}}"
+    *ngIf="massage.text"
+  >
+    {{massage.text}}
+  </div>
+  <select
+  [(ngModel)]="currentRecordId"
+  (change)="onRecordChange()"
+  [ngModelOptions]="{standalone: true}"
+  >
+    <option
+      *ngFor="let msgUser of records"
+      [value]="msgUser.id"
+    >
+      {{msgUser.name}}
+    </option>
+  </select>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': name.invalid && name.touched}"
+  >
+    <input
+      type="text"
+      placeholder="Введите название тура"
+      ngModel
+      name="name"
+      #name="ngModel"
+      required
+      [ngModel]="currentRecord.name"
+      [disabled]="currentRecord.userName != userName.name"
+      maxlength="40"
+    >
+  </div>
+  <span
+    *ngIf="name.invalid && name.touched"
+  >
+    <span>Поле обязательно для заполнения</span>
+  </span>
+  <div
+    class="form-group"
+    [ngClass]="{'has-error': date.invalid && date.touched}"
+  >
+    <input
+      type="datetime-local"
+      placeholder="Дата публикации"
+      ngModel
+      name="date"
+      #date="ngModel"
+      required
+      [ngModel] = "currentRecord.date"
+      [disabled]="currentRecord.userName != userName.name"
+    >
+    <span
+      *ngIf="date.invalid && date.touched"
+    >
+    <span>Поле обязательно для заполнения</span>
+  </span>
+  </div>
+
+  <div
+    class="form-group"
+    [ngClass]="{'invalidEnter': description.invalid && description.touched}"
+  >
+    <textarea
+      placeholder="Изменение информации о походе"
+      ngModel
+      name="description"
+      #description="ngModel"
+      required
+      [ngModel] = "currentRecord.description"
+      minlength="10"
+      maxlength="300"
+      [disabled]="currentRecord.userName != userName.name"
+    >
+    </textarea>
+    <span
+      *ngIf="description.invalid && description.touched"
+    >
+    <span>Поле обязательно для заполнения</span>
+  </span>
+  </div>
+
+  <button type="submit" [disabled]="f.invalid" *ngIf="currentRecord.userName === userName.name">
+    Изменить
+  </button>
+  <button type="submit" (click)="delRecord(f)" id="del" *ngIf="currentRecord.userName === userName.name">
+    Удалить
+  </button>
+</form>

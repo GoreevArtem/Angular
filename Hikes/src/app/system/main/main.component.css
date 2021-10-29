@@ -1,0 +1,149 @@
+.main{
+  background-color: white;
+  opacity: 0.9;
+  box-shadow: 1px 1px 20px #000000;
+  border-radius: 10px;
+  margin: 20px;
+  color: black;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding: 30px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+h1{
+  justify-content: center;
+ text-align: center;
+  text-transform: uppercase;
+  color: #c4002f;
+  font-size: 30px;
+}
+ol{
+  font-size: 18px;
+  border-radius: 20px;
+  text-align: justify;
+  padding: 10px;
+  color: black;
+  font-size: 120%;
+  margin-left: 20px;
+}
+#mainInfo{
+  color: white;
+  padding: 15px;
+  background: url("https://anband.spb.ru/images/100/DSC100100244.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 950px;
+  font-family: sans-serif;
+}
+
+.ourRecord {
+  background-color: aliceblue;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid green;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+h3 {
+  text-align: center;
+  color: #130b87;
+  text-transform: uppercase;
+  font-size: 140%;
+}
+
+.date {
+  font-size: 80%;
+  color: #00de30;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: rgba(196, 0, 47, 0.84);
+  font-size: 30px;
+  text-align: center;
+}
+
+p{
+  color: black;
+  font-size: 120%;
+  text-align: justify;
+}
+
+h2 {
+  text-align: center;
+  color: rgba(42, 99, 255, 0.84);
+  text-transform: uppercase;
+}
+
+button{
+  background-color: #3fb341;
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 15pt;
+  border-radius: 10px;
+  color: aliceblue;
+  font-weight: bolder;
+  margin-left: 30px;
+  cursor: pointer;
+  transition-delay: 0.2s;
+  position: relative;
+  left: 47%;
+  transform: translate(-50%, 0);
+  margin-bottom: 20px;
+}
+
+iframe{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px;
+}
+
+#about{
+  background-color: #ff353b;
+  color: #e6eaff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: white;
+}
+
+a{
+  color: yellow;
+}
+
+.searchInfo{
+  display: inline-flex;
+  font-size: 20px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: white;
+  text-transform: uppercase;
+}
+
+
+input[type = "text"]{
+  font-size: 1.5em;
+  background-color: #fcf5f6;
+  color: black;
+}
+div>.hov{
+  padding-right: 20px;
+  background-color: #9e00fc;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 10px;
+}
+div>.hov:hover{
+  background-color: #c21f2e;
+  cursor: pointer;
+  color: white;
+}

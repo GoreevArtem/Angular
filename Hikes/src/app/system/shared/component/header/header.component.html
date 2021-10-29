@@ -1,0 +1,19 @@
+<header>
+  <nav>
+    <ul>
+      <li>
+        <div>
+          &#9776; Привет, {{user.name}}
+        </div>
+        <ul class="hidden">
+          <li class="date">
+            <div>Дата : {{date | date: 'dd.MM.yyy'}}</div>
+          </li>
+          <li (click)="onLogout()">
+            <div id="exit">&#9785; Выйти</div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

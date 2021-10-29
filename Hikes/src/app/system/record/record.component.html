@@ -1,0 +1,15 @@
+<div class="recordMain">
+  <section *ngIf="!isLoaded">
+    Загрузка данных...
+  </section>
+  <section *ngIf="isLoaded" class="addRecord">
+    <app-add-record (onRecordAdd)="newRecordAdd($event)"></app-add-record>
+    <h1>Изменить приглашение</h1>
+    <app-edit-record
+      [records]="records"
+      (onRecordEdit)="recordEdit($event)"
+    ></app-edit-record>
+
+  </section>
+  <router-outlet></router-outlet>
+</div>

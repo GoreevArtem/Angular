@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div
+      class="form-group"
+      [ngClass]="{'has-error': form.get('name').invalid && form.get('name').touched}">
+      <label for="UserName">Имя пользователя</label>
+      <input type="text" placeholder="ФИО" name="UserName" formControlName="name" required>
+      <span
+        class="form-help-text"
+        *ngIf="form.get('name').invalid && form.get('name').touched"
+      >
+        Имя не может быть пустым
+      </span>
+    </div>
+    <div
+      class="form-group"
+      [ngClass]="{'has-error': form.get('email').invalid && form.get('email').touched}">
+      <label for="UName">Эл. почта</label>
+      <input type="text" placeholder="Email" name="UName" formControlName="email" required>
+      <span
+        class="form-help-text"
+        *ngIf="form.get('email').invalid && form.get('email').touched"
+      >
+      <span *ngIf="form.get('email')['errors']['required']">Email не может быть пустым</span>
+      <span *ngIf="form.get('email')['errors']['email']">Введите корректный email</span>
+      <span *ngIf="form.get('email')['errors']['forbiddenEmails']">Email уже занят</span>
+      </span>
+    </div>
+    <div class="form-group" [ngClass]="{'has-error': form.get('password').invalid && form.get('password').touched}">
+
+
+      <label for="PWord">Пароль</label>
+      <input type="text" placeholder="Пароль" name="PWord" formControlName="password" required>
+      <div
+        class="form-help-text"
+        *ngIf="form.get('password').invalid && form.get('password').touched">
+        <span *ngIf="form.get('password')['errors']['required']">Пароль не должен быть пустым</span>
+        <span *ngIf="form.get('password')['errors']['minlength']">
+          Нужно {{form.get('password')['errors']['minlength']['requiredLength']}}
+          символов. Сейчас {{form.get('password')['errors']['minlength']['actualLength']}}
+        </span>
+      </div>
+    </div>
+    <div
+      class="form-group"
+      [ngClass]="{'has-error': form.get('agree').invalid && form.get('agree').touched}">
+      <label id="RM">
+        <input type="checkbox" checked="checked" name="remember" formControlName="agree"> Запомнить меня
+      </label>
+      <span
+        class="form-help-text"
+        *ngIf="form.get('agree').invalid && form.get('agree').touched"
+      >
+        <span *ngIf="form.get('agree')['errors']['required']">Потвердите согласие</span>
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Создать</button>
+  </div>
+</form>

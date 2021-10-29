@@ -1,0 +1,87 @@
+textarea {
+  min-width: 635px;
+  min-height: 200px;
+  max-width: 635px;
+  max-height: 240px;
+  border-radius: 10px;
+  font-size: 105%;
+  margin-bottom: 10px;
+}
+
+input, button, textarea ,select{
+  outline: 0;
+  outline-offset: 0;
+}
+
+button {
+  background-color: rgba(46,119,255,0.85);
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 15pt;
+  border-radius: 10px;
+  color: aliceblue;
+  font-weight: bolder;
+  margin-left: 30px;
+}
+
+button:hover {
+  background-color: #3250ff;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+
+input {
+  margin-bottom: 7px;
+  border-radius: 10px;
+  font-size: 105%;
+  text-transform: uppercase;
+}
+
+input[type=text] {
+  height: 30px;
+  width: 634px;
+}
+
+input[type=date] {
+  height: 34px;
+  width: 637px;
+}
+select{
+  height: 34px;
+  width: 640px;
+  border-radius: 10px;
+  font-size: 105%;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  float: left;
+}
+
+input:focus, textarea:focus, select:focus{
+  border: 2px solid #1673ff;
+}
+
+.alert {
+  margin: 10px;
+  color: #ff2650;
+}
+
+span {
+  padding: 20px;
+  color: rgba(196, 0, 47, 0.84);
+  text-transform: lowercase;
+}
+
+#del{
+  background-color: rgba(255,60,60,0.85);
+  margin-left: 20px;
+}
+#del:hover{
+  background-color: #ff0d00;
+}
+
+#mainPost{
+  padding-left: 8px;
+  color: crimson;
+}

@@ -1,0 +1,107 @@
+.ourRecord {
+  background-color: aliceblue;
+  max-width: 640px;
+  min-height: 12em;
+  max-height: 15em;
+  border-radius: 10px;
+  border: 2px solid green;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: rgba(42, 99, 255, 0.84);
+  text-transform: uppercase;
+}
+
+h3 {
+  text-align: center;
+  color: #130b87;
+  text-transform: uppercase;
+  font-size: 140%;
+}
+
+.date {
+  font-size: 80%;
+  color: #00de30;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: rgba(196, 0, 47, 0.84);
+  font-size: 30px;
+  text-align: center;
+}
+
+p{
+  color: black;
+  font-size: 120%;
+}
+
+textarea {
+  min-width: 635px;
+  min-height: 200px;
+  max-width: 635px;
+  max-height: 240px;
+  border-radius: 10px;
+  font-size: 105%;
+  margin-bottom: 10px;
+}
+
+input, button, textarea {
+  outline: 0;
+  outline-offset: 0;
+}
+
+button {
+  background-color: rgba(46,119,255,0.85);
+  padding: 10px;
+  text-transform: uppercase;
+  font-size: 15pt;
+  border-radius: 10px;
+  color: aliceblue;
+  font-weight: bolder;
+  margin-left: 30px;
+}
+
+button:hover {
+  background-color: #3250ff;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+
+input {
+  margin-bottom: 7px;
+  border-radius: 10px;
+  font-size: 105%;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+  height: 30px;
+  width: 634px;
+}
+
+input[type=date] {
+  height: 34px;
+  width: 637px;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #1673ff;
+}
+
+span {
+  padding: 20px;
+  color: rgba(196, 0, 47, 0.84);
+  text-transform: lowercase;
+}
+
+.alert {
+  margin: 10px;
+  color: rgba(0, 196, 44, 0.84);
+}

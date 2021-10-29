@@ -1,0 +1,97 @@
+<div id="mainInfo">
+  <div class="main">
+    <h1>Главная страница</h1>
+    <h2 style="color: #ff5100">Отличельные особенности нашей компании от других</h2>
+    <ol>
+      <li>С душой подходим к организации — наша цель в том, чтобы людей, которые любят горы, природу, походы и
+        путешествия,
+        стало больше, всем видам отдыха мы предпочитаем активных отдых на природе, и очень хотим, чтобы эта тенденция
+        росла.
+      </li>
+      <li>Команда турклуба — опытные, смелые и сильные люди, которые безопасно проведут группу по любому маршруту от
+        похода выходного дня до восхождения на 7-тысячник
+        среди наших путешествий вы точно найдете себе что-то по вкусу: походы по России и миру, походы выходного дня,
+        восхождения и активные туры.
+      </li>
+      <li>Наша еда — вкусная, сбалансированная и легкая, мы используем все новинки outdoor-сферы: консервы в мягких
+        упаковках, сублиматы, натуральные полуфабрикаты и пр.
+      </li>
+      <li>В походах нашего клуба снаряжение всегда новое и от ведущих outdoor-брендов.</li>
+      <li>Работаем только официально, со всеми участниками заключается договор.</li>
+      <li>Заботимся о своих участниках — оформляем страховки и проводим все необходимые консультации (по физической
+        подготовке, подборке снаряжения, помогаем купить его со скидкой).
+      </li>
+    </ol>
+    <div id="about">
+      Хотите больше узнать о нас переходите во вкладку
+      <a [routerLink]="['/system', 'about']">О нас</a>
+    </div>
+
+    <button *ngIf="!isCollapsed" (click)="toggleCollapse()">Показать видео</button>
+    <button *ngIf="isCollapsed" (click)="toggleCollapse()">Скрыть видео</button>
+    <div *ngIf="isCollapsed">
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/eNP0bVKfqcQ" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/n7GXvdXRJRA" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/abutRXDEN1A" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+      <iframe width="760" height="515" src="https://www.youtube.com/embed/YQN-_BYCGKs" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+    <br>
+    <br>
+    <button *ngIf="isCollapsed" (click)="toggleCollapse()">Показать список походов</button>
+    <button *ngIf="!isCollapsed" (click)="toggleCollapse()">Убрать список</button>
+    <section *ngIf="!isLoaded">
+      Загрузка данных...
+    </section>
+
+    <div *ngIf="!isCollapsed">
+
+      <div class="searchInfo">
+        <div>
+          <input
+            type="text"
+            [placeholder]="searchPlaceholder"
+            [(ngModel)]="searchValue"
+          >
+        </div>
+        <div appDirective>
+
+          <div class="searchInfo">
+            <div class="hov" (click)="changeCriteria('id')">Номер</div>
+            <div class="hov" (click)="changeCriteria('name')">Название</div>
+            <div class="hov" (click)="changeCriteria('userName')">Пользователь</div>
+            <div class="hov" (click)="changeCriteria('date')">Дата</div>
+          </div>
+        </div>
+      </div>
+
+
+      <h2>Походы</h2>
+      <div *ngFor="let c of records | appFilter: searchValue: searchField; let i = index">
+        <div>
+          <div class="ourRecord">
+            N{{i + 1}}
+            <h3>
+              {{c.name}}
+            </h3>
+
+            <div class="date">
+              <i style="color: #c4002f">{{c.userName}}</i> опубликовал в : {{c.date}}
+            </div>
+            <p>
+              Информация : {{c.description}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
